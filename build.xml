@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project default="create_run_jar" name="Create Runnable Jar for Project jdataserver with Jar-in-Jar Loader">
+    <!--this file was created by Eclipse Runnable JAR Export Wizard-->
+    <!--ANT 1.7 is required                                        -->
+    <target name="create_run_jar">
+        <jar destfile="jdataserver.jar">
+            <manifest>
+                <attribute name="Main-Class" value="org.eclipse.jdt.internal.jarinjarloader.JarRsrcLoader"/>
+                <attribute name="Rsrc-Main-Class" value="org.valabs.jdataserver.Main"/>
+                <attribute name="Class-Path" value="."/>
+                <attribute name="Rsrc-Class-Path" value="./ jetty-server-9.1.1.v20140108.jar javax-websocket-server-impl-9.1.1.v20140108.jar websocket-server-9.1.1.v20140108.jar websocket-servlet-9.1.1.v20140108.jar websocket-api-9.1.1.v20140108.jar websocket-common-9.1.1.v20140108.jar jetty-util-9.1.1.v20140108.jar servlet-api-3.1.jar jetty-http-9.1.1.v20140108.jar jetty-io-9.1.1.v20140108.jar javax.json-1.0.4.jar javax.json-api-1.0.jar jetty-servlet-9.1.1.v20140108.jar oracle.jdbc.jar javax.websocket-api-1.0.jar"/>
+            </manifest>
+            <zipfileset src="jar-in-jar-loader.zip"/>
+            <fileset dir="bin"/>
+            <zipfileset dir="lib\jetty\lib" includes="jetty-server-9.1.1.v20140108.jar"/>
+            <zipfileset dir="lib\jetty\lib\websocket" includes="javax-websocket-server-impl-9.1.1.v20140108.jar"/>
+            <zipfileset dir="lib\jetty\lib\websocket" includes="websocket-server-9.1.1.v20140108.jar"/>
+            <zipfileset dir="lib\jetty\lib\websocket" includes="websocket-servlet-9.1.1.v20140108.jar"/>
+            <zipfileset dir="lib\jetty\lib\websocket" includes="websocket-api-9.1.1.v20140108.jar"/>
+            <zipfileset dir="lib\jetty\lib\websocket" includes="websocket-common-9.1.1.v20140108.jar"/>
+            <zipfileset dir="lib\jetty\lib" includes="jetty-util-9.1.1.v20140108.jar"/>
+            <zipfileset dir="lib\jetty\lib" includes="servlet-api-3.1.jar"/>
+            <zipfileset dir="lib\jetty\lib" includes="jetty-http-9.1.1.v20140108.jar"/>
+            <zipfileset dir="lib\jetty\lib" includes="jetty-io-9.1.1.v20140108.jar"/>
+            <zipfileset dir="lib\json" includes="javax.json-1.0.4.jar"/>
+            <zipfileset dir="lib\json" includes="javax.json-api-1.0.jar"/>
+            <zipfileset dir="lib\jetty\lib" includes="jetty-servlet-9.1.1.v20140108.jar"/>
+            <zipfileset dir="lib\oracle" includes="oracle.jdbc.jar"/>
+            <zipfileset dir="lib\jetty\lib\websocket" includes="javax.websocket-api-1.0.jar"/>
+        </jar>
+    </target>
+</project>
